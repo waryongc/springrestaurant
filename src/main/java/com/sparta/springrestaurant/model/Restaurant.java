@@ -1,10 +1,16 @@
 package com.sparta.springrestaurant.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+import javax.persistence.*;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Entity
 public class Restaurant {
 
     @Id
@@ -12,9 +18,12 @@ public class Restaurant {
     private Long id;
 
     @Column
-    
     private String name;
+
+    @Column
     private int minOrderprice;
+
+    @Column
     private int deliveryFee;
 
 
