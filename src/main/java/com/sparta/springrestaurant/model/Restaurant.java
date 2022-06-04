@@ -1,5 +1,6 @@
 package com.sparta.springrestaurant.model;
 
+import com.sparta.springrestaurant.dto.RestaurantRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,16 +18,21 @@ public class Restaurant {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String name;
 
-    @Column
+    @Column()
     private int minOrderprice;
 
     @Column
     private int deliveryFee;
 
-
+    public Restaurant(RestaurantRequestDto requestDto, Long id){
+        this.id=id;
+        this.name=requestDto.getName();
+        this.minOrderprice=requestDto.getMinOrderprice();
+        this.deliveryFee=requestDto.getDeliveryFee();
+    }
 }
 
 // git test
