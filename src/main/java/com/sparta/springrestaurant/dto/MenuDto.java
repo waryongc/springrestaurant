@@ -4,6 +4,6 @@ import lombok.Getter;
 
 @Getter
 public class MenuDto{
-    private String name;
+    private String menuName;
     private int price;
 }

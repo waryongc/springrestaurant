@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @Getter
 public class MenuRequestDto {
 
-    private String name;
+    private String menuName;
     private int price;
 }

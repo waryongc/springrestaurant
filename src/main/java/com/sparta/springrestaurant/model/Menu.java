@@ -19,16 +19,19 @@ public class Menu {
     private Long id;
 
     @Column(nullable=false, unique = true)
-    private String name;
+    private String menuName;
 
     @Column(nullable = false)
     private int price;
 
-    // 메뉴 등록시 사용
-    public Menu(MenuRequestDto requestDto, Long id){
+    @Column(nullable = false)
+    private Long restaurantId;
 
-        this.id=id;
-        this.name=requestDto.getName();
+    // 메뉴 등록시 사용
+    public Menu(MenuRequestDto requestDto, Long restaurandId){
+
+        this.restaurantId=restaurandId;
+        this.menuName=requestDto.getMenuName();
         this.price=requestDto.getPrice();
 
     }
