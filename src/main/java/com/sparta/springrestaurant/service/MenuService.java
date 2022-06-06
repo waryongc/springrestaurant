@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MenuService {
@@ -20,7 +19,7 @@ public class MenuService {
     }
 
     public Menu creatMenu(MenuRequestDto requestDto, Long restaurantId){
-        Menu menu=new Menu(requestDto, restaurantId);
+        Menu menu=new Menu(requestDto);
 
         menuRepository.save(menu);
 
@@ -28,6 +27,6 @@ public class MenuService {
     }
 
     // 레스토랑의 메뉴 조회
-    public List<Menu> getMenus(Long restaurantId){ return menuRepository.findAllByRestaurantId(restaurantId);}
+//    public List<Menu> getMenus(Long restaurantId){ return menuRepository.findAllByRestaurantId(restaurantId);}
 
 }

@@ -24,13 +24,13 @@ public class Menu {
     @Column(nullable = false)
     private int price;
 
-    @Column(nullable = false)
-    private Long restaurantId;
+//    @Column(nullable = false)
+//    private Long restaurantId;
 
     // 메뉴 등록시 사용
-    public Menu(MenuRequestDto requestDto, Long restaurandId){
+    public Menu(MenuRequestDto requestDto){
 
-        this.restaurantId=restaurandId;
+//        this.restaurantId=restaurandId;
         this.menuName=requestDto.getMenuName();
         this.price=requestDto.getPrice();
 

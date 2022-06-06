@@ -19,7 +19,7 @@ public class Restaurant {
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private String restaurantName;
 
     @Column()
     private int minOrderprice;
@@ -27,12 +27,15 @@ public class Restaurant {
     @Column
     private int deliveryFee;
 
-    public Restaurant(RestaurantRequestDto requestDto, Long id){
+    // 레스토랑 생성 시 이용
+    public Restaurant(String restaurantName, int minOrderprice, int deliveryFee){
         this.id=id;
-        this.name=requestDto.getName();
-        this.minOrderprice=requestDto.getMinOrderprice();
-        this.deliveryFee=requestDto.getDeliveryFee();
+        this.restaurantName=restaurantName;
+        this.minOrderprice=minOrderprice;
+        this.deliveryFee=deliveryFee;
     }
+
+
 }
 
 // git test

@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class RestaurantRequestDto {
-    private String name;
+    private String restaurantName;
     private int minOrderprice;
     private int deliveryFee;
+
+//    public Long getRestaurant() {
+//    }
 }
