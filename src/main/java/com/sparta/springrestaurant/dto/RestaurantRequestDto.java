@@ -10,7 +10,7 @@ public class RestaurantRequestDto {
     private String restaurantName;
     private int minOrderprice;
     private int deliveryFee;
-
+}
 //    public Long getRestaurant() {
 //    }
-}
+
