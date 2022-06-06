@@ -29,7 +29,7 @@ public class Restaurant {
 
     // 레스토랑 생성 시 이용
     public Restaurant(String restaurantName, int minOrderprice, int deliveryFee){
-        this.id=id;
+//        this.id=id;
         this.restaurantName=restaurantName;
         this.minOrderprice=minOrderprice;
         this.deliveryFee=deliveryFee;

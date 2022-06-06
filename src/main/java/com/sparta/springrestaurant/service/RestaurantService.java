@@ -17,6 +17,7 @@ public class RestaurantService {
         this.restaurantRepository = restaurantRepository;
     }
 
+    // 음식점 등록
     public Restaurant registerRestaurant(RestaurantRequestDto requestDto){
 
         String restaurantName= requestDto.getRestaurantName();
@@ -30,6 +31,7 @@ public class RestaurantService {
         return restaurant;
     }
 
+    // 음식점 조회
     public List<Restaurant> getAllRestaurants(){
         return restaurantRepository.findAll();
     }

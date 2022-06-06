@@ -22,9 +22,20 @@ public class MenuController {
     }
 
     // 신규 메뉴 등록
-//    @PostMapping("/restaurant/{restaurantId}/food/register")
-//    public Menu creatMenu(@RequestBody MenuRequestDto requestDto){
-//
+    @PostMapping("/restaurant/{restaurantId}/food/register")
+    public Menu registerMenu(@RequestBody MenuRequestDto requestDto){
+        Menu menu=menuService.registerMenu(requestDto);
+
+        return menu;
+
+    }
+
+    // 메뉴판 조회
+    @GetMapping("/restaurant/{restaurant}/foods")
+    public List<Menu> getRestaurantMenus(Long id){
+        return menuService.getRestaurantMenus(id);
+    }
+
 //        // 레스토랑 id
 ////        Long restaruantId=restantDetails.getRestaurant()
 //    }
