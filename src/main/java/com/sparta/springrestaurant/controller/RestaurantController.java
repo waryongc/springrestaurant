@@ -25,11 +25,11 @@ public class RestaurantController {
 
     // 신규 음식점 등록
     @PostMapping("/restaurant/register")
-    public String registerRestaurant(RestaurantRequestDto requestDto){
+    public Restaurant registerRestaurant(RestaurantRequestDto requestDto){
 
-        restaurantService.registerRestaurant(requestDto);
+        Restaurant restaurant=restaurantService.registerRestaurant(requestDto);
 
-        return "redirect:/";
+        return restaurant;
     }
 
     // 음식점 조회

@@ -17,7 +17,7 @@ public class RestaurantService {
         this.restaurantRepository = restaurantRepository;
     }
 
-    public void registerRestaurant(RestaurantRequestDto requestDto){
+    public Restaurant registerRestaurant(RestaurantRequestDto requestDto){
 
         String restaurantName= requestDto.getRestaurantName();
         int minOrderprice=requestDto.getMinOrderprice();
@@ -27,6 +27,7 @@ public class RestaurantService {
         restaurantRepository.save(restaurant);
 
 
+        return restaurant;
     }
 
     public List<Restaurant> getAllRestaurants(){
