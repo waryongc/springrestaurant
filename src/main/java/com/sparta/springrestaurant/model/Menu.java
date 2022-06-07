@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.temporal.ValueRange;
 
 @Getter //get 함수를 일괄적으로 만들어줍니다
 @Setter
@@ -23,7 +24,6 @@ public class Menu {
 
     @Column(nullable = false)
     private int price;
-
 //    @Column(nullable = false)
 //    private Long restaurantId;
 
