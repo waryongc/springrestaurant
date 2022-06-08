@@ -1,10 +1,16 @@
 package com.sparta.springrestaurant.dto;
 
 import com.sparta.springrestaurant.exception.QuantityIsNotInRange;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.Column;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
 public class FoodsRequestDto {
 
     private String id;
