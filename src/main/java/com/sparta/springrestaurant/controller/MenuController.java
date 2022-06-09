@@ -5,10 +5,7 @@ import com.sparta.springrestaurant.dto.RestaurantRequestDto;
 import com.sparta.springrestaurant.model.Menu;
 import com.sparta.springrestaurant.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,9 +28,9 @@ public MenuController(MenuService menuSerivce){
     }
 
     // 메뉴판 조회
-    @GetMapping("/restaurant/{restaurant}/foods")
-    public List<Menu> getRestaurantMenus(Long id){
-        return menuService.getRestaurantMenus(id);
+    @GetMapping("/restaurant/{restaurantId}/foods")
+    public List<Menu> getRestaurantMenus(Long restaurantid){
+        return menuService.getRestaurantMenus(restaurantid);
     }
 
 //        // 레스토랑 id

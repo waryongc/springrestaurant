@@ -18,6 +18,8 @@ import javax.validation.constraints.NotBlank;
 @Getter
 public class RestaurantRequestDto {
 
+//    private Long restaurantId;
+
     @NotBlank
     private String restaurantName;
 

@@ -5,6 +5,7 @@ import com.sparta.springrestaurant.model.Restaurant;
 import com.sparta.springrestaurant.repository.RestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class RestaurantService {
     }
 
     // 음식점 등록
+    @Transactional
     public Restaurant registerRestaurant(RestaurantRequestDto requestDto) {
 
 //        String restaurantName= requestDto.getRestaurantName();

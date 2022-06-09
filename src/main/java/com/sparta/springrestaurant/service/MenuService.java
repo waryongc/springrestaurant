@@ -5,6 +5,7 @@ import com.sparta.springrestaurant.model.Menu;
 import com.sparta.springrestaurant.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class MenuService {
     }
 
     // 신규 메뉴 등록
+    @Transactional
     public Menu registerMenu(MenuRequestDto requestDto){
 
 //        int restaurantId=id;
@@ -35,14 +37,13 @@ public class MenuService {
         }
 
         menuRepository.save(menu);
-
         return menu;
     }
 
     // 메뉴판 조회
-    public List<Menu> getRestaurantMenus(Long id){
+    public List<Menu> getRestaurantMenus(Long restaurantid){
 
-        return menuRepository.findAllById(id);
+        return menuRepository.findAllById(restaurantid);
     }
 
     // 레스토랑의 메뉴 조회
