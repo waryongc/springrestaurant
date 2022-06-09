@@ -26,6 +26,14 @@ public class MenuService {
         int price=requestDto.getPrice();
 
         Menu menu=new Menu(menuName,price);
+
+        if(price<100 || price>1000000){
+            throw new IllegalArgumentException("가격은 100원에서 1000000원까지만 가능합니다.");
+        }
+        if((price%100)!=0){
+            throw new IllegalArgumentException("가격은 100원 단위로만 입력 가능합니다.");
+        }
+
         menuRepository.save(menu);
 
         return menu;

@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface MenuRepository extends JpaRepository<Menu, Long> {
-    List<Menu> findAllById(Long id);
+//    List<Menu> findAllById(Long id);
 //    List<Menu> findAllByRestaurantId(Long restaurantId);
 
 }

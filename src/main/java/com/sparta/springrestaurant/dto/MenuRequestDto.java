@@ -19,20 +19,20 @@ public class MenuRequestDto {
     @NotBlank
     private String menuName;
 
-    @Range(min=100,max=1000000, message ="100원부터 1000000원까지 가능합니다.")
+//    @Range(min=100,max=1000000, message ="100원부터 1000000원까지 가능합니다.")
     private int price;
 
-    public void checkPriceIsInRange(){
-        int price=this.price;
-        if(price<100 || price>1000000){
-            throw new PriceIsNotInRange();
-        }
-    }
-
-    public void checkPriceIs100Unit(){
-        int price=this.price;
-        if((price%100)!=0){
-            throw new PriceIsNot100Unit();
-        }
-    }
+//    public void checkPriceIsInRange(){
+//        int price=this.price;
+//        if(price<100 || price>1000000){
+//            throw new PriceIsNotInRange();
+//        }
+//    }
+//
+//    public void checkPriceIs100Unit(){
+//        int price=this.price;
+//        if((price%100)!=0){
+//            throw new PriceIsNot100Unit();
+//        }
+//    }
 }

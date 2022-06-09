@@ -18,7 +18,7 @@ import javax.validation.constraints.NotBlank;
 @Getter
 public class RestaurantRequestDto {
 
-//    @NotBlank
+    @NotBlank
     private String restaurantName;
 
 //    @Range(min=1000,max=100000, message ="주문 최소금액은 1000원입니다.")
