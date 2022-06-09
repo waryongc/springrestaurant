@@ -20,22 +20,18 @@ public MenuController(MenuService menuSerivce){
 
     // 신규 메뉴 등록
     @PostMapping("/restaurant/{restaurantId}/food/register")
-    public Menu registerMenu(@RequestBody MenuRequestDto requestDto){
-        Menu menu=menuService.registerMenu(requestDto);
-
+    public List<Menu> registerMenu(@RequestBody List<MenuRequestDto> requestDto,@PathVariable Long restaurantId){
+        List<Menu> menu=menuService.registerMenu(requestDto,restaurantId);
         return menu;
-
     }
 
     // 메뉴판 조회
     @GetMapping("/restaurant/{restaurantId}/foods")
-    public List<Menu> getRestaurantMenus(Long restaurantid){
-        return menuService.getRestaurantMenus(restaurantid);
+    public List<Menu> getRestaurantMenus(@PathVariable Long restaurantId){
+        return menuService.getRestaurantMenus(restaurantId);
     }
 
 //        // 레스토랑 id
 ////        Long restaruantId=restantDetails.getRestaurant()
 //    }
-
-
 }
