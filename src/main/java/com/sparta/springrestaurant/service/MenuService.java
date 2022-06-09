@@ -1,16 +1,12 @@
 package com.sparta.springrestaurant.service;
 
 import com.sparta.springrestaurant.dto.MenuRequestDto;
-import com.sparta.springrestaurant.dto.RestaurantDto;
-import com.sparta.springrestaurant.dto.RestaurantRequestDto;
 import com.sparta.springrestaurant.model.Menu;
-import com.sparta.springrestaurant.model.Restaurant;
 import com.sparta.springrestaurant.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.time.temporal.ValueRange;
 import java.util.List;
 
 @Service
@@ -24,6 +20,7 @@ public class MenuService {
     }
 
     // 신규 메뉴 등록
+    @Transactional
     public Menu registerMenu(MenuRequestDto requestDto){
 
 //        int restaurantId=id;
@@ -31,15 +28,22 @@ public class MenuService {
         int price=requestDto.getPrice();
 
         Menu menu=new Menu(menuName,price);
-        menuRepository.save(menu);
 
+        if(price<100 || price>1000000){
+            throw new IllegalArgumentException("가격은 100원에서 1000000원까지만 가능합니다.");
+        }
+        if((price%100)!=0){
+            throw new IllegalArgumentException("가격은 100원 단위로만 입력 가능합니다.");
+        }
+
+        menuRepository.save(menu);
         return menu;
     }
 
     // 메뉴판 조회
-    public List<Menu> getRestaurantMenus(Long id){
+    public List<Menu> getRestaurantMenus(Long restaurantid){
 
-        return menuRepository.findAllById(id);
+        return menuRepository.findAllById(restaurantid);
     }
 
     // 레스토랑의 메뉴 조회

@@ -16,23 +16,29 @@ public class Restaurant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long restaurantid;
 
     @Column(nullable = false)
     private String restaurantName;
 
-    @Column()
+    @Column
     private int minOrderprice;
 
     @Column
     private int deliveryFee;
 
     // 레스토랑 생성 시 이용
-    public Restaurant(String restaurantName, int minOrderprice, int deliveryFee){
-//        this.id=id;
-        this.restaurantName=restaurantName;
-        this.minOrderprice=minOrderprice;
-        this.deliveryFee=deliveryFee;
+//    public Restaurant(String restaurantName, int minOrderprice, int deliveryFee){
+////        this.id=id;
+//        this.restaurantName=restaurantName;
+//        this.minOrderprice=minOrderprice;
+//        this.deliveryFee=deliveryFee;
+//    }
+
+    public Restaurant(RestaurantRequestDto requestDto){
+        this.restaurantName= requestDto.getRestaurantName();
+        this.minOrderprice= requestDto.getMinOrderprice();
+        this.deliveryFee= requestDto.getDeliveryFee();
     }
 
 
