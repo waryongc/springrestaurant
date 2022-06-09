@@ -19,6 +19,9 @@ public class Menu {
     @Id
     private Long id;
 
+    @Column
+    private Long restaurantId;
+
     @Column(nullable=false, unique = true)
     private String menuName;
 
@@ -33,10 +36,10 @@ public class Menu {
 //        this.price=requestDto.getPrice();
 //
 //    }
-
     // 메뉴 등록시 사용
-    public Menu(String menuName, int price) {
+    public Menu(String menuName, int price,Long restaurantId) {
         this.menuName=menuName;
         this.price=price;
+        this.restaurantId=restaurantId;
     }
 }
